@@ -878,3 +878,28 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #17a192;
 }
+
+.grow {
+    -webkit-transition: all .2s ease-in-out; 
+    -webkit-transform: scale(1); 
+    -ms-transition: all .2s ease-in-out; 
+    -ms-transform: scale(1); 
+    -moz-transition: all .2s ease-in-out; 
+    -moz-transform: scale(1);
+    transition: all .2s ease-in-out; 
+    transform: scale(1);   
+}
+
+.grow:hover,
+.grow:focus,
+.grow:active,
+.grow.active { 
+    -webkit-transition: all .2s ease-in;
+    -webkit-transform: scale(1.1);
+    -ms-transition: all .2s ease-in;
+    -ms-transform: scale(1.1);   
+    -moz-transition: all .2s ease-in;
+    -moz-transform: scale(1.1);
+    transition: all .2s ease-in;
+    transform: scale(1.1);
+}
