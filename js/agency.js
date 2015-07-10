@@ -4,6 +4,8 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+$.getScript("js/FileSaver.min.js", function() {});
+
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
@@ -13,6 +15,15 @@ $(function() {
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
+});
+
+$(function() {
+   $("#InputPicture").fileinput({'showUpload':false, 'previewFileType':'any', allowedFileTypes: ['image'], maxImageWidth: 1000, maxImageHeight: 1000, minImageWidth: 200, minImageHeight: 200}); 
+});
+
+$('#InputPicture').on('filebatchselected', function(event, files) {
+    $image = files[0];
+    $extension = $image.name.slice($image.name.indexOf('.'), $image.name.length);
 });
 
 // Highlight the top nav as scrolling occurs
